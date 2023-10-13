@@ -29,12 +29,26 @@ class StoresService {
     }
   }
 
-  update(){
-
+  update(id, changes){
+    const index = this.stores.findIndex(item => item.id === id);
+    if (index === -1) {
+      throw new Error('Product not found')
+    }
+    const store = this.stores[index]
+    this.stores[index] = {
+      ...store,
+      ...changes
+    };
+    return this.stores[index];
   }
 
-  delete(){
-
+  delete(id){
+    const index = this.stores.findIndex(item => item.id === id);
+    if(index === -1) {
+      throw new Error ('Product not found');
+    }
+    this.stores.splice(index,1);
+    return { id };
   }
 
 }

@@ -10,9 +10,15 @@ router.get('/', (req, res) => {
   let limit = req.query.limit?req.query.limit:2;
   let offset = req.query.offset?req.query.offset:1;
 
-  service.generate(limit);
-  users = service.find()
+  service.generate(limit, offset);
+  const users = service.find()
   res.json(users);
 })
+
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  const user = service.findOne(id);
+  res.status(user.status).json(user.data);
+});
 
 module.exports = router

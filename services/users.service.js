@@ -27,7 +27,12 @@ class UsersService {
   }
 
   findOne(id){
-    return this.products.find(item => item.id === id);
+    let findById = this.users.find(item => item.id === id);
+    if(findById == undefined){
+      return {status:404, data:"Id error"};
+    } else {
+      return {status:202, data:findById};
+    }
   }
 
   update(){

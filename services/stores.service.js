@@ -9,7 +9,7 @@ class StoresService {
   }
 
   generate(){
-    this.stores = [{id: "1", name: 'Caballito', location: 'Caba'}, {id: "2", name: 'Palermo', location: 'Caba'}];
+    this.stores = [{id: "1", name: 'Caballito', location: 'Caba'}, {id: "3", name: 'Palermo', location: 'Caba'}];
   }
 
   create(){
@@ -21,7 +21,12 @@ class StoresService {
   }
 
   findOne(id){
-    return this.stores.find(item => item.id === id);
+    let findById = this.stores.find(item => item.id === id);
+    if(findById == undefined){
+      return {status:404, data:"Id error"};
+    } else {
+      return {status:202, data:findById};
+    }
   }
 
   update(){

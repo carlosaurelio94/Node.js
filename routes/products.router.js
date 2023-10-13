@@ -17,7 +17,7 @@ router.get('/filter', (req, res) => {
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   const product = service.findOne(id);
-  res.json(product);
+  res.status(product.status).json(product.data);
 });
 
 router.post('/', (req, res) => {

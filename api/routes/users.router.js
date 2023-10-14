@@ -1,4 +1,3 @@
-/*
 const express = require('express');
 
 const UsersService = require('./../services/users.service');
@@ -36,4 +35,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router
-*/

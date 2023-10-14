@@ -1,4 +1,3 @@
-/*
 const { faker } = require('@faker-js/faker');
 
 
@@ -55,4 +54,3 @@ class StoresService {
 }
 
 module.exports = StoresService
-*/

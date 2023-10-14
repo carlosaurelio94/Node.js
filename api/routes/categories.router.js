@@ -1,4 +1,3 @@
-/*
 const express = require('express');
 const { faker } = require('@faker-js/faker');
 
@@ -13,4 +12,3 @@ router.get('/:categoryId/products/:productId', (req, res) => {
 });
 
 module.exports = router
-*/

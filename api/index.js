@@ -10,9 +10,10 @@ const port = 3050;
 
 app.use(express.json());
 
-const whitelist = ['http://localhost:8080', 'https://paginaQueQuieroTengaAcceso.ok'];
+const whitelist = ['http://localhost:3050/*', 'https://paginaQueQuieroTengaAcceso.ok'];
 const options = {
   origin: (origin, callback) => {
+    console.log("ORIGEN : ", origin)
     if (whitelist.includes(origin)) {
       callback(null, true);
     } else {
@@ -20,17 +21,17 @@ const options = {
     }
   }
 };
-app.use(cors(options));
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hola mi server en express');
 });
 
-app.get('/nueva-ruta', (req, res) => {
+app.get('/api/nueva-ruta', (req, res) => {
   res.send('Hola soy una nueva ruta');
 });
 
 routerApi(app);
+app.use(cors(options));
 
 app.use(logErrors);
 app.use(boomErrorHandler);

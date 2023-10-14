@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 
 const StoresService = require('./../services/stores.service');
@@ -39,3 +40,4 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router
+*/

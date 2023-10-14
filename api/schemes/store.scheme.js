@@ -1,3 +1,4 @@
+/*
 const Joi = require('joi');
 
 const id = Joi.string().uuid();
@@ -22,3 +23,4 @@ const getStoreScheme = Joi.object({
 });
 
 module.exports = { createStoreScheme, updateStoreScheme, getStoreScheme }
+*/
